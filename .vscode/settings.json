@@ -10,9 +10,10 @@
 			"foreground": "#616E76"
 		}
 	},
-	"terminal.integrated.fontFamily": "'Cascadia Code', 'monospace', monospace",
+	"terminal.integrated.fontFamily": "'Geist Mono Light', 'monospace', monospace",
+	//"terminal.integrated.fontFamily": "'Cascadia Code', 'monospace', monospace",
 	//"terminal.integrated.fontFamily": "'Ubuntu Mono', 'monospace', monospace",
-	"terminal.integrated.fontSize": 13,
+	"terminal.integrated.fontSize": 12,
 	"workbench.colorTheme": "Absent (rainglow)",
 	"explorer.compactFolders": false,
 	"workbench.tree.indent": 20,
