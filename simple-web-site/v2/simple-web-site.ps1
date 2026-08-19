@@ -1,5 +1,20 @@
-$port = 8000
-$url = "http://localhost:${port}/"
+# $port = 8000
+# $url = "http://localhost:${port}/"
+$domain = "localhost"
+# $domain = "test.jp"
+$url = "http://${domain}:80/" # ポート80で起動するために管理者権限で実行すること
+
+try {
+    $ips = [System.Net.Dns]::GetHostAddresses($domain) | Select-Object -ExpandProperty IPAddressToString
+    if ($ips -notcontains "127.0.0.1") {
+        Write-Error "hosts ファイルに 127.0.0.1 ${domain} を追加してください。"
+        return
+    }
+}
+catch {
+    Write-Error "hosts ファイルに 127.0.0.1 ${domain} を追加してください。"
+    return
+}
 
 # HTTPリスナーの開始
 $listener = New-Object System.Net.HttpListener
